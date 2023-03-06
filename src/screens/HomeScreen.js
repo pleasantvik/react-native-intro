@@ -1,8 +1,22 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, View, Button } from "react-native";
 
-const HomeScreen = () => {
-  return <Text style={styles.text}>React Native</Text>;
+const HomeScreen = ({ navigation }) => {
+  console.log(navigation);
+  return (
+    <View>
+      <Text style={styles.text}>React Native</Text>
+      <Button
+        onPress={() => navigation.navigate("Components")}
+        title="component"
+      />
+      <Button onPress={() => navigation.navigate("List")} title="List" />
+      <Button
+        onPress={() => navigation.navigate("Image")}
+        title="Image screen"
+      />
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
